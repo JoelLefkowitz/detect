@@ -5,7 +5,7 @@
 /bin
 /build
 /dist
-docs/build
+/docs/build
 /docs/doxygen
 /gcm.cache
 /generated-docs
