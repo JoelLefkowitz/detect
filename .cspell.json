@@ -1,0 +1,17 @@
+{
+  "language": "en",
+  "ignorePaths": [
+    ".gitignore",
+    "*.clang-format",
+    "*.lock",
+    "**/.DS_Store",
+    "**/*.git/**",
+    "**/bin/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/docs/**",
+    "Doxyfile"
+  ],
+  "dictionaries": ["cpp", "local", "misc", "softwareTerms"],
+  "words": ["cfmt", "cppcheck", "cppclean", "doxyfile", "remarkrc", "suppr"]
+}
