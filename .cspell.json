@@ -13,5 +13,13 @@
     "Doxyfile"
   ],
   "dictionaries": ["cpp", "local", "misc", "softwareTerms"],
-  "words": ["cfmt", "cppcheck", "cppclean", "doxyfile", "remarkrc", "suppr"]
+  "words": [
+    "cfmt",
+    "cppcheck",
+    "cppclean",
+    "doxyfile",
+    "lefkowitz",
+    "remarkrc",
+    "suppr"
+  ]
 }
