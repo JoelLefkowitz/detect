@@ -1,7 +1,7 @@
 // ʕ •ᴥ•ʔ Detect ʕ•ᴥ• ʔ
 // A single header library to detect the OS at compile time.
 // https://github.com/joellefkowitz/detect
-// Version: 1.0.0
+// Version: 1.0.1
 // License: MIT
 
 #ifndef PLATFORM_DETECT_H

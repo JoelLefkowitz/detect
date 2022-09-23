@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = Detect
-PROJECT_NUMBER         = 1.0.0
+PROJECT_NUMBER         = 1.0.1
 PROJECT_BRIEF          = A single header library to detect the OS at compile time.
 PROJECT_LOGO           =
 INPUT_ENCODING         = UTF-8
