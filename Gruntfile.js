@@ -8,7 +8,7 @@ module.exports = simple(
       cppcheck: "cppcheck --enable=style,performance,portability detect.hpp",
       cspell: 'npx cspell ".*" "*" "**/*"',
       remark: "npx remark -r .remarkrc --ignore-path .gitignore . .github",
-      cfmt: `clang-format -i -style=file detect.hpp --verbose`,
+      cfmt: "clang-format -i -style=file detect.hpp --verbose",
       doxygen: "doxygen",
     },
   },
