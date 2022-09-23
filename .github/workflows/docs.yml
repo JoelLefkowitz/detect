@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/node
 
       - name: Install apt dependencies
-        run: apt install -y doxygen=1.9.1-2ubuntu2
+        run: sudo apt install -y doxygen=1.9.1-2ubuntu2
 
       - name: Build docs
         run: grunt docs
