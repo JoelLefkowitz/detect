@@ -1,4 +1,4 @@
-// Licensed under the  MIT license
+// Licensed under the MIT license
 // https://github.com/joellefkowitz/detect
 
 #ifndef PLATFORM_DETECT_H
