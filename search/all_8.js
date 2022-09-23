@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windows_16',['Windows',['../namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a900213723803c28810d9d1345ebfa9c3',1,'platform']]]
+  ['solaris_16',['Solaris',['../namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0ab6a0da4a1cecbe83a7e513cb035e8539',1,'platform']]]
 ];
