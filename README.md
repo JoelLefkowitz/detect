@@ -11,6 +11,57 @@ A single header library to detect the OS at compile time.
 | Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield] |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]          |
 
+## Usage
+
+Using [compiler predefined macros][macros] we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.
+
+```cpp
+#include "detect.hpp"
+
+#if PLATFORM_DETECTED_OS == PLATFORM_LINUX
+...
+#endif
+```
+
+The platform macros exported are:
+
+```cpp
+PLATFORM_LINUX
+PLATFORM_DARWIN
+PLATFORM_WINDOWS
+PLATFORM_BSD
+PLATFORM_SOLARIS
+PLATFORM_IOS
+PLATFORM_ANDROID
+```
+
+We provide an enumeration for the operating systems:
+
+```cpp
+namespace platform {
+    enum OS {
+        Linux,
+        Darwin,
+        Windows,
+        BSD,
+        Solaris,
+        IOS,
+        Android
+    };
+}
+```
+
+Using constant expression we can export some operating system specific constants at compile time:
+
+```cpp
+namespace platform {
+    constexpr OS os = Linux;
+    constexpr char sep = '/';
+}
+```
+
+For more details read the [documentation][pages].
+
 ## Tooling
 
 ### Lint
@@ -23,12 +74,6 @@ grunt lint
 
 ```bash
 grunt format
-```
-
-### Docs
-
-```bash
-grunt docs
 ```
 
 ## Continuous integration
@@ -69,8 +114,10 @@ Lots of love to the open source community!
 
 <!-- External links -->
 
+[pages]: https://joellefkowitz.github.io/detect
 [semver]: http://semver.org/
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
+[macros]: http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system
 
 <!-- Contributor links -->
 
