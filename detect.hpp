@@ -1,5 +1,8 @@
-// Licensed under the MIT license
+// ʕ •ᴥ•ʔ Detect ʕ•ᴥ• ʔ
+// A single header library to detect the OS at compile time.
 // https://github.com/joellefkowitz/detect
+// Version: 1.0.0
+// License: MIT
 
 #ifndef PLATFORM_DETECT_H
 #define PLATFORM_DETECT_H

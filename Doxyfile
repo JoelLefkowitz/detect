@@ -1,8 +1,10 @@
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "Detect"
-PROJECT_NUMBER         =
-PROJECT_BRIEF          =
+PROJECT_NAME           = Detect
+PROJECT_NUMBER         = 1.0.0
+PROJECT_BRIEF          = A single header library to detect the OS at compile time.
 PROJECT_LOGO           =
+INPUT_ENCODING         = UTF-8
+INPUT                  = detect.hpp docs/main.md
 OUTPUT_DIRECTORY       = docs
 CREATE_SUBDIRS         = NO
 CREATE_SUBDIRS_LEVEL   = 8
@@ -107,8 +109,6 @@ WARN_AS_ERROR          = NO
 WARN_FORMAT            = "$file:$line: $text"
 WARN_LINE_FORMAT       = "at line $line of file $file"
 WARN_LOGFILE           =
-INPUT                  = detect.hpp
-INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.cc \
                          *.cxx \
