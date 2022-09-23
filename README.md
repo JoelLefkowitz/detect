@@ -13,6 +13,8 @@ A single header library to detect the OS at compile time.
 
 ## Usage
 
+Copy and paste the [source][raw].
+
 Using [compiler predefined macros][macros] we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.
 
 ```cpp
@@ -114,6 +116,7 @@ Lots of love to the open source community!
 
 <!-- External links -->
 
+[raw]: https://raw.githubusercontent.com/JoelLefkowitz/detect/master/detect.hpp
 [pages]: https://joellefkowitz.github.io/detect
 [semver]: http://semver.org/
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
