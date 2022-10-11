@@ -1,7 +1,5 @@
 # Usage {#mainpage}
 
-Copy and paste the [source][raw].
-
 Using [compiler predefined macros][macros] we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.
 
 ```cpp
@@ -46,10 +44,10 @@ Using constant expression we can export some operating system specific constants
 namespace platform {
     constexpr OS os = Linux;
     constexpr char sep = '/';
+    constexpr char devnull = '/dev/null';
 }
 ```
 
 <!-- External links -->
 
-[raw]: https://raw.githubusercontent.com/JoelLefkowitz/detect/master/detect.hpp
 [macros]: http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system

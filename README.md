@@ -11,54 +11,67 @@ A single header library to detect the OS at compile time.
 | Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield] |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]          |
 
+## Installation
+
+### Sources
+
+Download the [source][source].
+
 ## Usage
 
-Copy and paste the [source][raw].
-
-Using [compiler predefined macros][macros] we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.
+Using [compiler predefined macros][macros] we can detect the operating system before compilation. To trigger conditional compilation in a readable way we can check for equality against macros exported for each operating system.
 
 ```cpp
 #include "detect.hpp"
 
-#if PLATFORM_DETECTED_OS == PLATFORM_LINUX
+#if PLATFORM_OS == PLATFORM_OS_LINUX
 ...
 #endif
 ```
 
-The platform macros exported are:
+The exported macros are:
 
-```cpp
-PLATFORM_LINUX
-PLATFORM_DARWIN
-PLATFORM_WINDOWS
-PLATFORM_BSD
-PLATFORM_SOLARIS
-PLATFORM_IOS
-PLATFORM_ANDROID
-```
+- `PLATFORM_OS_LINUX`
+- `PLATFORM_OS_SOLARIS`
+- `PLATFORM_OS_WINDOWS`
+- `PLATFORM_OS_BSD`
+- `PLATFORM_OS_MACOS`
+- `PLATFORM_OS_IOS`
+- `PLATFORM_OS_WATCHOS`
+- `PLATFORM_OS_TVOS`
+- `PLATFORM_OS_ANDROID`
 
-We provide an enumeration for the operating systems:
+We can also detect if the operating system is compliant with the Unix and Posix standards or is for a mobile.
+
+- `PLATFORM_UNIX`
+- `PLATFORM_POSIX`
+- `PLATFORM_MOBILE`
+
+These will be booleans rather than defined or undefined.
+
+It is also useful to define compile time constants:
 
 ```cpp
 namespace platform {
     enum OS {
         Linux,
-        Darwin,
-        Windows,
-        BSD,
         Solaris,
-        IOS,
-        Android
-    };
-}
-```
+        BSD,
+        Windows,
+        macOS,
+        iOS,
+        watchOS,
+        tvOS,
+        Android,
+    }
 
-Using constant expression we can export some operating system specific constants at compile time:
+    constexpr OS os
+    constexpr char sep
+    constexpr char devnull[]
 
-```cpp
-namespace platform {
-    constexpr OS os = Linux;
-    constexpr char sep = '/';
+    constexpr bool unix
+    constexpr bool posix
+    constexpr bool mobile
 }
 ```
 
@@ -116,7 +129,7 @@ Lots of love to the open source community!
 
 <!-- External links -->
 
-[raw]: https://raw.githubusercontent.com/JoelLefkowitz/detect/master/detect.hpp
+[source]: https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp
 [pages]: https://joellefkowitz.github.io/detect
 [semver]: http://semver.org/
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
