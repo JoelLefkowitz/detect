@@ -68,54 +68,37 @@ $(function() {
 <div class="title">Usage </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a> Copy and paste the <a href="https://raw.githubusercontent.com/JoelLefkowitz/detect/master/detect.hpp">source</a>.</p>
-<p>Using <a href="http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system">compiler predefined macros</a> we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="detect_8hpp.html">detect.hpp</a>&quot;</span></div>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> Using <a href="http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system">compiler predefined macros</a> we can detect the operating system at compile time. These are aliased so that we can conditionally compile other sections in a readable way.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;detect.hpp&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#if PLATFORM_DETECTED_OS == PLATFORM_LINUX</span></div>
 <div class="line">...</div>
 <div class="line">#endif</div>
-<div class="ttc" id="adetect_8hpp_html"><div class="ttname"><a href="detect_8hpp.html">detect.hpp</a></div></div>
 </div><!-- fragment --><p>The platform macros exported are:</p>
-<div class="fragment"><div class="line"><a class="code" href="detect_8hpp.html#affcc3790504b838f9ce56a008cce0950">PLATFORM_LINUX</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#ad119ce584740cada56765beff0b0bb56">PLATFORM_DARWIN</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#a20cd3c4775f1897fb5658d2dc61382c3">PLATFORM_WINDOWS</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#a0005f1633e87cd5d869465804354ca2a">PLATFORM_BSD</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#acf1ecc53ae6fbd3f85a4cf7699445bba">PLATFORM_SOLARIS</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#a29238b2c3b760685303952453cdcb37e">PLATFORM_IOS</a></div>
-<div class="line"><a class="code" href="detect_8hpp.html#a5cee1c7e5378115e4d04a4fc87e40e9b">PLATFORM_ANDROID</a></div>
-<div class="ttc" id="adetect_8hpp_html_a0005f1633e87cd5d869465804354ca2a"><div class="ttname"><a href="detect_8hpp.html#a0005f1633e87cd5d869465804354ca2a">PLATFORM_BSD</a></div><div class="ttdeci">#define PLATFORM_BSD</div><div class="ttdef"><b>Definition:</b> detect.hpp:14</div></div>
-<div class="ttc" id="adetect_8hpp_html_a20cd3c4775f1897fb5658d2dc61382c3"><div class="ttname"><a href="detect_8hpp.html#a20cd3c4775f1897fb5658d2dc61382c3">PLATFORM_WINDOWS</a></div><div class="ttdeci">#define PLATFORM_WINDOWS</div><div class="ttdef"><b>Definition:</b> detect.hpp:13</div></div>
-<div class="ttc" id="adetect_8hpp_html_a29238b2c3b760685303952453cdcb37e"><div class="ttname"><a href="detect_8hpp.html#a29238b2c3b760685303952453cdcb37e">PLATFORM_IOS</a></div><div class="ttdeci">#define PLATFORM_IOS</div><div class="ttdef"><b>Definition:</b> detect.hpp:16</div></div>
-<div class="ttc" id="adetect_8hpp_html_a5cee1c7e5378115e4d04a4fc87e40e9b"><div class="ttname"><a href="detect_8hpp.html#a5cee1c7e5378115e4d04a4fc87e40e9b">PLATFORM_ANDROID</a></div><div class="ttdeci">#define PLATFORM_ANDROID</div><div class="ttdef"><b>Definition:</b> detect.hpp:17</div></div>
-<div class="ttc" id="adetect_8hpp_html_acf1ecc53ae6fbd3f85a4cf7699445bba"><div class="ttname"><a href="detect_8hpp.html#acf1ecc53ae6fbd3f85a4cf7699445bba">PLATFORM_SOLARIS</a></div><div class="ttdeci">#define PLATFORM_SOLARIS</div><div class="ttdef"><b>Definition:</b> detect.hpp:15</div></div>
-<div class="ttc" id="adetect_8hpp_html_ad119ce584740cada56765beff0b0bb56"><div class="ttname"><a href="detect_8hpp.html#ad119ce584740cada56765beff0b0bb56">PLATFORM_DARWIN</a></div><div class="ttdeci">#define PLATFORM_DARWIN</div><div class="ttdef"><b>Definition:</b> detect.hpp:12</div></div>
-<div class="ttc" id="adetect_8hpp_html_affcc3790504b838f9ce56a008cce0950"><div class="ttname"><a href="detect_8hpp.html#affcc3790504b838f9ce56a008cce0950">PLATFORM_LINUX</a></div><div class="ttdeci">#define PLATFORM_LINUX</div><div class="ttdef"><b>Definition:</b> detect.hpp:11</div></div>
+<div class="fragment"><div class="line">PLATFORM_LINUX</div>
+<div class="line">PLATFORM_DARWIN</div>
+<div class="line">PLATFORM_WINDOWS</div>
+<div class="line">PLATFORM_BSD</div>
+<div class="line">PLATFORM_SOLARIS</div>
+<div class="line">PLATFORM_IOS</div>
+<div class="line">PLATFORM_ANDROID</div>
 </div><!-- fragment --><p>We provide an enumeration for the operating systems:</p>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceplatform.html">platform</a> {</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0">OS</a> {</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0aa35812bc4eacdbfdbe2d4b1e38db05e2">Linux</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a6dc4909b6d7c31e4f0eb14eccc577226">Darwin</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a900213723803c28810d9d1345ebfa9c3">Windows</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a06170de39bafa250aed2c020532bf9e1">BSD</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0ab6a0da4a1cecbe83a7e513cb035e8539">Solaris</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a47e71c4c000304bcb708c698e509daca">IOS</a>,</div>
-<div class="line">        <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a75044e5cb0452752d131d3f67422618d">Android</a></div>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>platform {</div>
+<div class="line">    <span class="keyword">enum</span> OS {</div>
+<div class="line">        Linux,</div>
+<div class="line">        Darwin,</div>
+<div class="line">        Windows,</div>
+<div class="line">        BSD,</div>
+<div class="line">        Solaris,</div>
+<div class="line">        IOS,</div>
+<div class="line">        Android</div>
 <div class="line">    };</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceplatform_html"><div class="ttname"><a href="namespaceplatform.html">platform</a></div><div class="ttdef"><b>Definition:</b> detect.hpp:44</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0">platform::OS</a></div><div class="ttdeci">OS</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0a06170de39bafa250aed2c020532bf9e1"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a06170de39bafa250aed2c020532bf9e1">platform::BSD</a></div><div class="ttdeci">@ BSD</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0a47e71c4c000304bcb708c698e509daca"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a47e71c4c000304bcb708c698e509daca">platform::IOS</a></div><div class="ttdeci">@ IOS</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0a6dc4909b6d7c31e4f0eb14eccc577226"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a6dc4909b6d7c31e4f0eb14eccc577226">platform::Darwin</a></div><div class="ttdeci">@ Darwin</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0a75044e5cb0452752d131d3f67422618d"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a75044e5cb0452752d131d3f67422618d">platform::Android</a></div><div class="ttdeci">@ Android</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0a900213723803c28810d9d1345ebfa9c3"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0a900213723803c28810d9d1345ebfa9c3">platform::Windows</a></div><div class="ttdeci">@ Windows</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0aa35812bc4eacdbfdbe2d4b1e38db05e2"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0aa35812bc4eacdbfdbe2d4b1e38db05e2">platform::Linux</a></div><div class="ttdeci">@ Linux</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
-<div class="ttc" id="anamespaceplatform_html_a279b3c3077efba41bed9cbdf1a976ee0ab6a0da4a1cecbe83a7e513cb035e8539"><div class="ttname"><a href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0ab6a0da4a1cecbe83a7e513cb035e8539">platform::Solaris</a></div><div class="ttdeci">@ Solaris</div><div class="ttdef"><b>Definition:</b> detect.hpp:45</div></div>
 </div><!-- fragment --><p>Using constant expression we can export some operating system specific constants at compile time:</p>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceplatform.html">platform</a> {</div>
-<div class="line">    constexpr <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0">OS</a> os = <a class="code" href="namespaceplatform.html#a279b3c3077efba41bed9cbdf1a976ee0aa35812bc4eacdbfdbe2d4b1e38db05e2">Linux</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>platform {</div>
+<div class="line">    constexpr OS os = Linux;</div>
 <div class="line">    constexpr <span class="keywordtype">char</span> sep = <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line">    constexpr <span class="keywordtype">char</span> devnull = <span class="stringliteral">&#39;/dev/null&#39;</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
