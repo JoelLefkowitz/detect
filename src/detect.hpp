@@ -63,41 +63,41 @@
 #define PLATFORM_OS_ANDROID 9
 
 #ifdef __linux__
-    #define PLATFORM_OS PLATFORM_OS_LINUX
+#define PLATFORM_OS PLATFORM_OS_LINUX
 
 #elif defined(__sun) && defined(__SVR4)
-    #define PLATFORM_OS PLATFORM_OS_SOLARIS
+#define PLATFORM_OS PLATFORM_OS_SOLARIS
 
 #elif defined(_WIN32) || defined(__CYGWIN__)
-    #define PLATFORM_OS PLATFORM_OS_WINDOWS
+#define PLATFORM_OS PLATFORM_OS_WINDOWS
 
 #elif defined(__unix__)
-    #include <sys/param.h>
-    
-    #if defined(BSD)
-        #define PLATFORM_OS PLATFORM_OS_BSD
+#include <sys/param.h>
 
-    #endif
+#if defined(BSD)
+#define PLATFORM_OS PLATFORM_OS_BSD
+
+#endif
 
 #elif defined(__APPLE__) && defined(__MACH__)
-    #include <TargetConditionals.h>
-    
-    #if TARGET_OS_MAC
-        #define PLATFORM_OS PLATFORM_OS_MACOS
+#include <TargetConditionals.h>
 
-    #elif TARGET_OS_IPHONE
-        #define PLATFORM_OS PLATFORM_OS_IOS
+#if TARGET_OS_MAC
+#define PLATFORM_OS PLATFORM_OS_MACOS
 
-    #elif TARGET_OS_TV
-        #define PLATFORM_OS PLATFORM_OS_TVOS
-    
-    #elif TARGET_OS_WATCH
-        #define PLATFORM_OS PLATFORM_OS_WATCHOS
+#elif TARGET_OS_IPHONE
+#define PLATFORM_OS PLATFORM_OS_IOS
 
-    #endif
+#elif TARGET_OS_TV
+#define PLATFORM_OS PLATFORM_OS_TVOS
+
+#elif TARGET_OS_WATCH
+#define PLATFORM_OS PLATFORM_OS_WATCHOS
+
+#endif
 
 #elif defined(__ANDROID__)
-    #define PLATFORM_OS PLATFORM_OS_ANDROID
+#define PLATFORM_OS PLATFORM_OS_ANDROID
 
 #endif
 
@@ -112,25 +112,27 @@
 // throw an error.
 
 #ifndef PLATFORM_OS
-    #error "Could not detect OS"
+#error "Could not detect OS"
 
 #endif
 
-#if !defined(_WIN32) && (defined(__unix__) || (defined(__APPLE__) && defined(__MACH__)) || defined(__CYGWIN__))
-    #define PLATFORM_UNIX true
-    
-    #include <unistd.h>
-    
-    #if defined(_POSIX_VERSION)
-        #define PLATFORM_POSIX true
-    
-    #else
-        #define PLATFORM_POSIX false
+#if !defined(_WIN32) &&                                                        \
+    (defined(__unix__) || (defined(__APPLE__) && defined(__MACH__)) ||         \
+     defined(__CYGWIN__))
+#define PLATFORM_UNIX true
 
-    #endif
+#include <unistd.h>
+
+#if defined(_POSIX_VERSION)
+#define PLATFORM_POSIX true
 
 #else
-    #define PLATFORM_UNIX false
+#define PLATFORM_POSIX false
+
+#endif
+
+#else
+#define PLATFORM_UNIX false
 
 #endif
 
@@ -151,7 +153,7 @@ namespace platform {
     constexpr OS os = Linux;
 
 #elif PLATFORM_OS == PLATFORM_OS_SOLARIS
-    constexpr OS os = Solaris;
+    constexpr OS   os        = Solaris;
 
 #elif PLATFORM_OS == PLATFORM_OS_WINDOWS
     constexpr OS os = BSD;
@@ -190,7 +192,7 @@ namespace platform {
     constexpr bool unix = true;
 
 #else
-    constexpr bool unix = false;
+    constexpr bool unix      = false;
 
 #endif
 
@@ -198,7 +200,7 @@ namespace platform {
     constexpr bool posix = true;
 
 #else
-    constexpr bool posix = false;
+    constexpr bool posix     = false;
 
 #endif
 
@@ -206,7 +208,7 @@ namespace platform {
     constexpr bool mobile = true;
 
 #else
-    constexpr bool mobile = false;
+    constexpr bool mobile    = false;
 
 #endif
 

@@ -4,22 +4,22 @@ A single header library to detect the OS at compile time.
 
 ## Status
 
-| Source     | Shields                                                                                                                     |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Project    | ![release][release_shield] ![license][license_shield]                                                                       |
-| Health     | ![readthedocs][readthedocs_shield] ![github_review][github_review_shield]                                                   |
-| Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield] |
-| Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]          |
+| Source     | Shields                                                       |
+| ---------- | ------------------------------------------------------------- |
+| Project    | ![latest_release] ![license] ![line_count] ![language_count]  |
+| Health     | ![documentation] ![review_action] ![codacy_quality]           |
+| Repository | ![open_issues] ![closed_issues] ![open_pulls] ![closed_pulls] |
+| Activity   | ![contributors] ![monthly_commits] ![last_commit]             |
 
 ## Installation
 
 ### Sources
 
-Download the [source][source].
+Download the [source](https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp).
 
 ## Usage
 
-Using [compiler predefined macros][macros] we can detect the operating system before compilation. To trigger conditional compilation in a readable way we can check for equality against macros exported for each operating system.
+Using [compiler predefined macros](http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system) we can detect the operating system before compilation. To trigger conditional compilation in a readable way we can check for equality against macros exported for each operating system.
 
 ```cpp
 #include "detect.hpp"
@@ -75,33 +75,41 @@ namespace platform {
 }
 ```
 
-For more details read the [documentation][pages].
+## Documentation
 
-## Tooling
+This repository's documentation is hosted on [Github Pages](https://JoelLefkowitz.github.io/detect).
 
-### Lint
+To generate the documentation locally:
 
 ```bash
-grunt lint
+doxygen
 ```
 
-### Format
+## Linters
+
+To run linters:
 
 ```bash
-grunt format
+nps lint
+```
+
+## Formatters
+
+To run formatters:
+
+```bash
+nps format
 ```
 
 ## Continuous integration
 
-This repository uses github actions to lint and test each commit. Formatting tasks and writing/generating documentation must be done before committing new code.
+This repository uses GitHub Actions to lint and test each commit. Each commit should be formatted and its corresponding documentation should be updated.
 
 ## Versioning
 
-This repository adheres to semantic versioning standards.
-For more information on semantic versioning visit [SemVer][semver].
+This repository adheres to semantic versioning standards. For more information on semantic versioning visit [semver](https://semver.org).
 
-Bump2version is used to version and tag changes.
-For example:
+Bump2version is used to version and tag changes. For example:
 
 ```bash
 bump2version patch
@@ -117,49 +125,33 @@ Please read this repository's guidelines on [contributing](CONTRIBUTING.md) for 
 
 ## Contributors
 
-- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][author]
-
-[![Buy Me A Coffee][coffee_button]][author_coffee]
+- [Joel Lefkowitz](https://github.com/joellefkowitz) - Initial work
 
 ## Remarks
 
 Lots of love to the open source community!
 
-![Be kind][be_kind]
+<p align='center'>
+    <img width=200 height=200 src='https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif' alt='Be kind to your mind' />
+    <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
+    <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
+</p>
 
-<!-- External links -->
-
-[source]: https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp
-[pages]: https://joellefkowitz.github.io/detect
-[semver]: http://semver.org/
-[be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
-[macros]: http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system
-
-<!-- Contributor links -->
-
-[author]: https://github.com/joellefkowitz
-[author_coffee]: https://www.buymeacoffee.com/joellefkowitz
-[coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
-
-<!-- Project shields -->
-
-[release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/detect
-[license_shield]: https://img.shields.io/github/license/joellefkowitz/detect
-
-<!-- Health shields -->
-
-[readthedocs_shield]: https://img.shields.io/readthedocs/detect
-[github_review_shield]: https://img.shields.io/github/workflow/status/JoelLefkowitz/detect/Review
-
-<!-- Repository shields -->
-
-[issues_shield]: https://img.shields.io/github/issues/joellefkowitz/detect
-[issues_closed_shield]: https://img.shields.io/github/issues-closed/joellefkowitz/detect
-[pulls_shield]: https://img.shields.io/github/issues-pr/joellefkowitz/detect
-[pulls_closed_shield]: https://img.shields.io/github/issues-pr-closed/joellefkowitz/detect
-
-<!-- Activity shields -->
-
-[contributors_shield]: https://img.shields.io/github/contributors/joellefkowitz/detect
-[monthly_commits_shield]: https://img.shields.io/github/commit-activity/m/joellefkowitz/detect
-[last_commit_shield]: https://img.shields.io/github/last-commit/joellefkowitz/detect
+[test_ubuntu_20.04]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_ubuntu_20.04.yml "Review action"
+[test_macos_12 ]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_macos_12.yml "Review action"
+[test_windows_2022]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_windows_2022.yml "Review action"
+[latest_release]: https://img.shields.io/github/v/tag/joellefkowitz/detect "Latest release"
+[license]: https://img.shields.io/github/license/joellefkowitz/detect "License"
+[line_count]: https://img.shields.io/tokei/lines/github/joellefkowitz/detect "Line count"
+[language_count]: https://img.shields.io/github/languages/count/joellefkowitz/detect "Language count"
+[documentation]: https://img.shields.io/readthedocs/detect "Documentation"
+[review_action]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml "Review action"
+[codacy_quality]: https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5 "Codacy quality"
+[conan_version]: https://img.shields.io/conan/v/detect "Conan Version"
+[open_issues]: https://img.shields.io/github/issues/joellefkowitz/detect "Open issues"
+[closed_issues]: https://img.shields.io/github/issues-closed/joellefkowitz/detect "Closed issues"
+[open_pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/detect "Open pull requests"
+[closed_pulls]: https://img.shields.io/github/issues-pr-closed/joellefkowitz/detect "Closed pull requests"
+[contributors]: https://img.shields.io/github/contributors/joellefkowitz/detect "Contributors"
+[monthly_commits]: https://img.shields.io/github/commit-activity/m/joellefkowitz/detect "Monthly commits"
+[last_commit]: https://img.shields.io/github/last-commit/joellefkowitz/detect "Last commit"

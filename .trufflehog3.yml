@@ -1,0 +1,31 @@
+severity: low
+exclude:
+  - message: Codacy project public id
+    pattern: fbc5f4145f4748ee81be186027b7e5b5
+
+  - message: Giphy links
+    pattern: https://media.giphy.com/media/
+
+  - message: Docs output
+    paths:
+      - "*8cpp*"
+      - "*8hpp*"
+      - docs
+      - files.html
+      - function*.html
+      - global*.html
+      - index.html
+      - main_8md.html
+      - md_docs_main.html
+      - namespace*.html
+      - pages.html
+      - search/*.html
+      - search/*.js
+
+  - message: Dependencies
+    paths:
+      - node_modules
+      - package-lock.json
+      - venv
+      - yarn-error.log
+      - yarn.lock
