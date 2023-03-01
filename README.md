@@ -16,7 +16,7 @@ A single header library to detect the OS at compile time.
 ### Sources
 
 ```bash
-conan install detect
+conan install -r=conancenter detect/2.0.0@
 ```
 
 You can also download the [source](https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp) and drop it straight into your project.

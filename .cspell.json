@@ -43,6 +43,7 @@
   "words": [
     "bumpversion",
     "codacy",
+    "conancenter",
     "cppcheck",
     "cppclean",
     "cppflags",
