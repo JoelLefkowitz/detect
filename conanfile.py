@@ -8,7 +8,7 @@ class PackageConan(ConanFile):
     name = "detect"
     description = "A single header library to detect the OS at compile time."
 
-    version = "2.0.0"
+    version = "2.0.1"
     license = "MIT"
 
     author = "Joel Lefkowitz joellefkowitz@hotmail.com"
