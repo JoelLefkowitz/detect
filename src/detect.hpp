@@ -1,7 +1,7 @@
 // ʕ •ᴥ•ʔ Detect - detect.hpp ʕ•ᴥ• ʔ
 // A single header library to detect the OS at compile time.
 // https://github.com/joellefkowitz/detect
-// Version: 2.0.0
+// Version: 2.0.1
 // License: MIT
 
 // Preprocessor macros:
@@ -116,9 +116,7 @@
 
 #endif
 
-#if !defined(_WIN32) &&                                                        \
-    (defined(__unix__) || (defined(__APPLE__) && defined(__MACH__)) ||         \
-     defined(__CYGWIN__))
+#if !defined(_WIN32) && (defined(__unix__) || (defined(__APPLE__) && defined(__MACH__)) || defined(__CYGWIN__))
 #define PLATFORM_UNIX true
 
 #include <unistd.h>

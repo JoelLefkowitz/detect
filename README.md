@@ -2,24 +2,20 @@
 
 A single header library to detect the OS at compile time.
 
-## Status
-
-| Source     | Shields                                                       |
-| ---------- | ------------------------------------------------------------- |
-| Project    | ![latest_release] ![license] ![line_count] ![language_count]  |
-| Health     | ![documentation] ![review_action] ![codacy_quality]           |
-| Repository | ![open_issues] ![closed_issues] ![open_pulls] ![closed_pulls] |
-| Activity   | ![contributors] ![monthly_commits] ![last_commit]             |
+![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml)
+![Quality](https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5)
 
 ## Installation
 
-### Sources
-
 ```bash
-conan install -r=conancenter detect/2.0.1@
+conan install detect
 ```
 
 You can also download the [source](https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp) and drop it straight into your project.
+
+## Documentation
+
+Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/detect).
 
 ## Usage
 
@@ -79,39 +75,63 @@ namespace platform {
 }
 ```
 
-## Documentation
+## Tooling
 
-This repository's documentation is hosted on [Github Pages](https://JoelLefkowitz.github.io/detect).
+### Tests
+
+To run tests:
+
+```bash
+scons tests
+```
+
+The runtime tests use environment variables to confirm they retrieve the executable path of the tests binary. For example, if the tests binary is at `dist/test`:
+
+```bash
+export FILEPATH $PWD/dist/tests
+export FILENAME tests
+export DIRPATH $PWD/dist
+export DIRNAME dist
+export ABSPATH $PWD/dist/a/b/c
+```
+
+```bash
+./dist/tests
+```
+
+### Documentation
 
 To generate the documentation locally:
 
-```bash
+```sh
 doxygen
 ```
 
-## Linters
+### Linters
 
 To run linters:
 
-```bash
-nps lint
+```sh
+cspell . --dot
+cppclean . --include-path $CPPPATH
+cppcheck **/*.*pp -q --enable=all --suppressions-list=.cppcheck
+scons --typecheck
 ```
 
-## Formatters
+### Formatters
 
 To run formatters:
 
-```bash
-nps format
+```sh
+prettier . --write
+clang-format -i **/*.*pp
 ```
 
-## Continuous integration
+## Contributing
 
-This repository uses GitHub Actions to lint and test each commit. Each commit should be formatted and its corresponding documentation should be updated.
+Please read this repository's [Code of Conduct](CODE_OF_CONDUCT.md) which outlines our collaboration standards and the [Changelog](CHANGELOG.md) for details on breaking changes that have been made.
 
-## Versioning
-
-This repository adheres to semantic versioning standards. For more information on semantic versioning visit [semver](https://semver.org).
+This repository adheres to semantic versioning standards. For more information on semantic versioning visit [SemVer](https://semver.org).
 
 Bump2version is used to version and tag changes. For example:
 
@@ -119,15 +139,7 @@ Bump2version is used to version and tag changes. For example:
 bump2version patch
 ```
 
-## Changelog
-
-Please read this repository's [changelog](CHANGELOG.md) for details on changes that have been made.
-
-## Contributing
-
-Please read this repository's guidelines on [contributing](CONTRIBUTING.md) for details on the process for submitting pull requests. Moreover, our [code of conduct](CODE_OF_CONDUCT.md) declares our collaboration standards.
-
-## Contributors
+### Contributors
 
 - [Joel Lefkowitz](https://github.com/joellefkowitz) - Initial work
 
@@ -140,22 +152,3 @@ Lots of love to the open source community!
     <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
     <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
 </p>
-
-[test_ubuntu_20.04]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_ubuntu_20.04.yml "Review action"
-[test_macos_12 ]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_macos_12.yml "Review action"
-[test_windows_2022]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/test_windows_2022.yml "Review action"
-[latest_release]: https://img.shields.io/github/v/tag/joellefkowitz/detect "Latest release"
-[license]: https://img.shields.io/github/license/joellefkowitz/detect "License"
-[line_count]: https://img.shields.io/tokei/lines/github/joellefkowitz/detect "Line count"
-[language_count]: https://img.shields.io/github/languages/count/joellefkowitz/detect "Language count"
-[documentation]: https://img.shields.io/readthedocs/detect "Documentation"
-[review_action]: https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml "Review action"
-[codacy_quality]: https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5 "Codacy quality"
-[conan_version]: https://img.shields.io/conan/v/detect "Conan Version"
-[open_issues]: https://img.shields.io/github/issues/joellefkowitz/detect "Open issues"
-[closed_issues]: https://img.shields.io/github/issues-closed/joellefkowitz/detect "Closed issues"
-[open_pulls]: https://img.shields.io/github/issues-pr/joellefkowitz/detect "Open pull requests"
-[closed_pulls]: https://img.shields.io/github/issues-pr-closed/joellefkowitz/detect "Closed pull requests"
-[contributors]: https://img.shields.io/github/contributors/joellefkowitz/detect "Contributors"
-[monthly_commits]: https://img.shields.io/github/commit-activity/m/joellefkowitz/detect "Monthly commits"
-[last_commit]: https://img.shields.io/github/last-commit/joellefkowitz/detect "Last commit"
