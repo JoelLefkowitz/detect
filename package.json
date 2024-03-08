@@ -7,6 +7,11 @@
   "author": "Joel Lefkowitz",
   "repository": "https://github.com/joellefkowitz/detect",
   "homepage": "https://joellefkowitz.github.io/detect",
+  "keywords": [
+    "os",
+    "platform",
+    "introspect"
+  ],
   "metadata": {
     "publisher": null,
     "languages": [
