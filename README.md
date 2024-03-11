@@ -76,13 +76,21 @@ namespace platform {
 ```
 
 ## Tooling
+ 
+Set the `CPPPATH` and `LIBPATH` environment variables:
+
+```bash
+export CPPPATH="/usr/include"
+export LIBPATH="/usr/lib"
+```
+
 
 ### Tests
 
 To run tests:
 
 ```bash
-scons tests
+scons
 ./dist/tests
 ```
 
