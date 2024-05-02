@@ -5,13 +5,9 @@ A single header library to detect the OS at compile time.
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml)
 ![Quality](https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5)
 
-## Installation
+## Installing
 
-```bash
-conan install detect
-```
-
-You can also download the [source](https://raw.githubusercontent.com/JoelLefkowitz/detect/master/src/detect.hpp) and drop it straight into your project.
+You can download the [sources](https://download-directory.github.io?url=https://github.com/joellefkowitz/detect/tree/master/src).
 
 ## Documentation
 
@@ -76,50 +72,47 @@ namespace platform {
 ```
 
 ## Tooling
- 
-Set the `CPPPATH` and `LIBPATH` environment variables:
+
+### Dependencies
+
+To install dependencies:
 
 ```bash
-export CPPPATH="/usr/include"
-export LIBPATH="/usr/lib"
+yarn install
+pip install .[all]
+conan install .
 ```
-
 
 ### Tests
 
 To run tests:
 
 ```bash
-scons
-./dist/tests
+scons test
 ```
 
 ### Documentation
 
 To generate the documentation locally:
 
-```sh
-doxygen
+```bash
+scons docs
 ```
 
 ### Linters
 
 To run linters:
 
-```sh
-cspell . --dot
-cppclean . --include-path $CPPPATH
-cppcheck **/*.*pp -q --enable=all --suppressions-list=.cppcheck
-scons --typecheck
+```bash
+scons lint
 ```
 
 ### Formatters
 
 To run formatters:
 
-```sh
-prettier . --write
-clang-format -i **/*.*pp
+```bash
+scons format
 ```
 
 ## Contributing
@@ -142,8 +135,8 @@ bump2version patch
 
 Lots of love to the open source community!
 
-<p align='center'>
+<div align='center'>
     <img width=200 height=200 src='https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif' alt='Be kind to your mind' />
     <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
     <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
-</p>
+</div>

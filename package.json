@@ -1,34 +1,12 @@
 {
-  "name": "detect",
-  "description": "A single header library to detect the OS at compile time.",
-  "version": "2.0.1",
-  "private": false,
-  "license": "MIT",
-  "author": "Joel Lefkowitz",
-  "repository": "https://github.com/joellefkowitz/detect",
-  "homepage": "https://joellefkowitz.github.io/detect",
-  "keywords": [
-    "os",
-    "platform",
-    "introspect"
-  ],
-  "metadata": {
-    "publisher": null,
-    "languages": [
-      "C++"
-    ],
-    "frameworks": [],
-    "paradigms": [
-      "Functional"
-    ],
-    "lifecycle": "Alpha"
-  },
+  "packageManager": "yarn@4.1.1",
   "scripts": {
-    "postinstall": "husky install"
+    "postinstall": "husky"
   },
   "devDependencies": {
     "cspell": "^8.0.0",
     "husky": "^9.0.0",
+    "nodemon": "^3.1.0",
     "prettier": "^3.0.0"
   }
 }

@@ -1,53 +1,13 @@
 {
   "language": "en",
-  "ignorePaths": [
-    ".git",
-    ".gitignore",
-    ".husky",
-    "*.dblite",
-    "coverage",
-    "dist",
-    "docs/*.css",
-    "Doxyfile",
-    "yarn-error.log"
-  ],
   "dictionaries": [
+    "aws",
     "bash",
     "en-gb",
+    "fullstack",
     "misc",
-    "node",
-    "softwareTerms",
-    "typescript"
+    "softwareTerms"
   ],
-  "words": [
-    "bumpversion",
-    "codacy",
-    "conancenter",
-    "constexpr",
-    "cppcheck",
-    "cppclean",
-    "cppflags",
-    "cpppath",
-    "cxxcomstr",
-    "cxxflags",
-    "dblite",
-    "devnull",
-    "doxyfile",
-    "emojize",
-    "fvisibility",
-    "googletest",
-    "gtest",
-    "iwyu",
-    "lefkowitz",
-    "libpath",
-    "linkcomstr",
-    "mainpage",
-    "psutil",
-    "scons",
-    "toomanyconfigs",
-    "tvos",
-    "typecheck",
-    "walkmate",
-    "watchos"
-  ]
+  "ignorePaths": [".git"],
+  "words": []
 }
