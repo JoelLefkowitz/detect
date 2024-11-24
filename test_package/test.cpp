@@ -1,8 +1,10 @@
-#include <gtest/gtest.h>
+#include <detect/constants.hpp>
 
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+int main() {
+    platform::os;
+    platform::sep;
+    platform::devnull;
+    platform::unix;
+    platform::posix;
+    platform::mobile;
 }
-
-TEST(_, _) { EXPECT_EQ(1, 2); }

@@ -21,6 +21,8 @@ ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ContinuationIndentWidth: 4
 EmptyLineBeforeAccessModifier: Always
 ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: false
+IndentPPDirectives: BeforeHash
 IndentWidth: 4
 InsertTrailingCommas: Wrapped
 KeepEmptyLinesAtTheStartOfBlocks: false
@@ -41,4 +43,3 @@ ReferenceAlignment: Pointer
 SeparateDefinitionBlocks: Always
 SortIncludes: CaseSensitive
 SortUsingDeclarations: true
-FixNamespaceComments: false

@@ -1,6 +1,6 @@
 # Detect
 
-A single header library to detect the OS at compile time.
+A header only library to detect the OS at compile time.
 
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml)
 ![Quality](https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5)
@@ -15,37 +15,42 @@ Documentation and more detailed examples are hosted on [Github Pages](https://jo
 
 ## Usage
 
-Using [compiler predefined macros](http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system) we can detect the operating system before compilation. To trigger conditional compilation in a readable way we can check for equality against macros exported for each operating system.
+Using [compiler predefined macros](http://web.archive.org/web/20191012035921/http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system) we can detect the operating system before compilation. This allows us to conditionally compile code:
 
 ```cpp
-#include "detect.hpp"
+#include <detect/macros.hpp>
 
-#if PLATFORM_OS == PLATFORM_OS_LINUX
+#if PLATFORM_LINUX
 ...
 #endif
 ```
 
+If we can check this at runtime then constants are more flexible:
+
+```cpp
+#include <detect/constants.hpp>
+
+if (platform::os == platform::linux) {
+  ...
+}
+```
+
 The exported macros are:
 
-- `PLATFORM_OS_LINUX`
-- `PLATFORM_OS_SOLARIS`
-- `PLATFORM_OS_WINDOWS`
-- `PLATFORM_OS_BSD`
-- `PLATFORM_OS_MACOS`
-- `PLATFORM_OS_IOS`
-- `PLATFORM_OS_WATCHOS`
-- `PLATFORM_OS_TVOS`
-- `PLATFORM_OS_ANDROID`
-
-We can also detect if the operating system is compliant with the Unix and Posix standards or is for a mobile.
-
+- `PLATFORM_LINUX`
+- `PLATFORM_SOLARIS`
+- `PLATFORM_WINDOWS`
+- `PLATFORM_BSD`
+- `PLATFORM_MACOS`
+- `PLATFORM_IOS`
+- `PLATFORM_WATCHOS`
+- `PLATFORM_TVOS`
+- `PLATFORM_ANDROID`
 - `PLATFORM_UNIX`
 - `PLATFORM_POSIX`
 - `PLATFORM_MOBILE`
 
-These will be booleans rather than defined or undefined.
-
-It is also useful to define compile time constants:
+The compile time constants are contained in the `platform` namesapce:
 
 ```cpp
 namespace platform {
@@ -62,12 +67,13 @@ namespace platform {
     }
 
     constexpr OS os
-    constexpr char sep
-    constexpr char devnull[]
 
     constexpr bool unix
     constexpr bool posix
     constexpr bool mobile
+
+    constexpr char sep
+    constexpr char devnull[]
 }
 ```
 

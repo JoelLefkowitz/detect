@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "**/azure-pipelines.yml": "azure-pipelines",
+    "*.cppm": "cpp",
+    "*.poem": "markdown",
+    "*.purs": "purescript",
+    "*.svg": "html",
+    "*.tsx": "typescriptreact",
+    ".clang-tidy": "yaml",
+    "stdexcept": "cpp",
+    "string": "cpp",
+    "iosfwd": "cpp"
+  }
+}
