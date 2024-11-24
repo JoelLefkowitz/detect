@@ -5,7 +5,7 @@ from conan.tools.scons import SConsDeps
 
 class Recipe(ConanFile):
     name = "detect"
-    version = "2.0.1"
+    version = "3.0.0"
 
     def export_sources(self):
         for source in ["src/*.[cht]pp", "SConstruct.py"]:
