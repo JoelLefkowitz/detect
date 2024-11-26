@@ -18,14 +18,19 @@ cspell = Script(
     ["npx", "cspell", ".", "--dot", "--gitignore"],
 )
 
-trufflehog3 = Script(
-    "trufflehog3",
+cppclean = Script(
+    "cppclean",
+    ["cppclean", "."],
+)
+
+trufflehog = Script(
+    "trufflehog",
     ["trufflehog3"],
 )
 
 clang_format = Script(
     "clang-format",
-    ["-i", tree(".", r"\.(cpp|hpp|tpp)$")],
+    ["clang-format", "-i", tree(".", r"\.(cpp|hpp|tpp)$")],
 )
 
 prettier = Script(
@@ -50,27 +55,30 @@ breathe = Script(
 )
 
 sphinx = Script(
-    "sphinx",
+    "sphinx-build",
     ["sphinx-build", "docs/sphinx", "docs/dist"],
+)
+
+lint = Routine(
+    "lint",
+    [cspell, cppclean, trufflehog],
+)
+
+fmt = Routine(
+    "format",
+    [clang_format, prettier],
+)
+
+docs = Routine(
+    "docs",
+    [doxygen, breathe, sphinx],
 )
 
 cli = Tasks(
     [],
     [],
-    [
-        cspell,
-        trufflehog3,
-        clang_format,
-        prettier,
-        doxygen,
-        breathe,
-        sphinx,
-    ],
-    [
-        Routine("lint", [cspell, trufflehog3]),
-        Routine("format", [clang_format, prettier]),
-        Routine("docs", [doxygen, breathe, sphinx]),
-    ],
+    [*lint.scripts, *fmt.scripts, *docs.scripts],
+    [lint, fmt, docs],
 )
 
 cli.register(env)

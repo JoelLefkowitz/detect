@@ -8,7 +8,7 @@
     "misc",
     "softwareTerms"
   ],
-  "ignorePaths": [".git", ".vscode"],
+  "ignorePaths": [".git", ".vscode", "build"],
   "words": [
     "apidoc",
     "bugprone",
@@ -24,6 +24,7 @@
     "devnull",
     "doxyfile",
     "endl",
+    "filelist",
     "furo",
     "giphy",
     "grotesk",
@@ -33,6 +34,7 @@
     "matplotlib",
     "miniscons",
     "namesapce",
+    "namespacelist",
     "nodiscard",
     "opengraph",
     "postpack",

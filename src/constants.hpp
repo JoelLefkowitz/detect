@@ -1,6 +1,7 @@
 #ifndef DETECT_CONSTANTS_HPP
 #define DETECT_CONSTANTS_HPP
 
+// cppclean-disable-next-line
 #include "macros.hpp"
 
 namespace platform {

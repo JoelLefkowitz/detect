@@ -8,7 +8,11 @@ class Recipe(ConanFile):
     version = "3.0.0"
 
     def export_sources(self):
-        for source in ["src/*.[cht]pp", "SConstruct.py"]:
+        for source in [
+            "conanfile.py",
+            "SConstruct.py",
+            "src/*.[cht]pp",
+        ]:
             copy(
                 self,
                 source,

@@ -7,7 +7,11 @@ A header only library to detect the OS at compile time.
 
 ## Installing
 
-You can download the [sources](https://download-directory.github.io?url=https://github.com/joellefkowitz/detect/tree/master/src).
+```bash
+conan search detect
+```
+
+You can also download the [sources](https://download-directory.github.io?url=https://github.com/joellefkowitz/detect/tree/master/src).
 
 ## Documentation
 
