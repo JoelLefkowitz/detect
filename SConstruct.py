@@ -1,6 +1,5 @@
 from miniscons import (
     Build,
-    Flag,
     Routine,
     Script,
     Target,
@@ -11,21 +10,16 @@ from miniscons import (
 )
 from walkmate import tree
 
-env = conan()
+env = conan(source="build/conan/SConscript_conandeps")
 
 cspell = Script(
     "cspell",
     ["npx", "cspell", ".", "--dot", "--gitignore"],
 )
 
-cppclean = Script(
-    "cppclean",
-    ["cppclean", "."],
-)
-
 trufflehog = Script(
     "trufflehog",
-    ["trufflehog3"],
+    ["trufflehog3", "-c", ".trufflehog3.yaml"],
 )
 
 clang_format = Script(
@@ -61,7 +55,7 @@ sphinx = Script(
 
 lint = Routine(
     "lint",
-    [cspell, cppclean, trufflehog],
+    [cspell, trufflehog],
 )
 
 fmt = Routine(

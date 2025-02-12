@@ -1,32 +1,61 @@
+import os
+
 from conan import ConanFile
 from conan.tools.files import copy
 from conan.tools.scons import SConsDeps
+from conan.tools.layout import basic_layout
 
 
-class Recipe(ConanFile):
+class DetectConan(ConanFile):
     name = "detect"
+    description = "Detect the OS at compile time."
     version = "3.0.0"
+    license = "MIT"
 
-    def export_sources(self):
-        for source in [
-            "conanfile.py",
-            "SConstruct.py",
-            "src/*.[cht]pp",
-        ]:
-            copy(
-                self,
-                source,
-                self.recipe_folder,
-                self.export_sources_folder,
-            )
+    url = "https://github.com/conan-io/conan-center-index"
+    homepage = "https://github.com/JoelLefkowitz/detect"
 
-    def generate(self):
-        SConsDeps(self).generate()
+    topics = (
+        "os",
+        "platform",
+        "introspect",
+        "header-only",
+    )
+
+    package_type = "header-library"
+    settings = (
+        "os",
+        "arch",
+        "compiler",
+        "build_type",
+    )
+
+    no_copy_source = True
+    exports = "src/*"
+
+    def layout(self):
+        basic_layout(self, src_folder="src")
+
+    def package_id(self):
+        self.info.clear()
+
+    def build(self):
+        pass
 
     def package(self):
         copy(
             self,
-            "*.[ht]pp",
-            f"{self.build_folder}/src",
-            f"{self.package_folder}/include/{self.name}",
+            "LICENSE.md",
+            self.recipe_folder,
+            os.path.join(self.package_folder, "licenses"),
         )
+        copy(
+            self,
+            "*.[ht]pp",
+            os.path.join(self.recipe_folder, "src"),
+            os.path.join(self.package_folder, "include", self.name),
+        )
+
+    def package_info(self):
+        self.cpp_info.bindirs = []
+        self.cpp_info.libdirs = []

@@ -1,8 +1,12 @@
 # Detect
 
-A header only library to detect the OS at compile time.
+Detect the OS at compile time.
 
-![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yml)
+c++11
+dependency free
+header only
+
+![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/detect/review.yaml)
 ![Quality](https://img.shields.io/codacy/grade/fbc5f4145f4748ee81be186027b7e5b5)
 
 ## Installing
@@ -11,7 +15,7 @@ A header only library to detect the OS at compile time.
 conan search detect
 ```
 
-You can also download the [sources](https://download-directory.github.io?url=https://github.com/joellefkowitz/detect/tree/master/src).
+You can also download the [sources](https://download-directory.github.io?url=https://github.com/JoelLefkowitz/detect/tree/master/src).
 
 ## Documentation
 
