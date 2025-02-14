@@ -10,7 +10,9 @@ from miniscons import (
 )
 from walkmate import tree
 
-env = conan(source="build/conan/SConscript_conandeps")
+conandeps = "build/conan/SConscript_conandeps"
+
+env = conan(source=conandeps)
 
 cspell = Script(
     "cspell",

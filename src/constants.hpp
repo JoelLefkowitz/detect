@@ -21,7 +21,7 @@ namespace platform {
     constexpr OS os = Linux;
 
 #elif PLATFORM_SOLARIS
-    constexpr OS os = Solaris;
+    constexpr OS os          = Solaris;
 
 #elif PLATFORM_WINDOWS
     constexpr OS os = BSD;
@@ -50,7 +50,7 @@ namespace platform {
     constexpr bool unix = true;
 
 #else
-    constexpr bool unix = false;
+    constexpr bool unix      = false;
 
 #endif
 
@@ -58,7 +58,7 @@ namespace platform {
     constexpr bool posix = true;
 
 #else
-    constexpr bool posix = false;
+    constexpr bool posix     = false;
 
 #endif
 
@@ -66,7 +66,7 @@ namespace platform {
     constexpr bool mobile = true;
 
 #else
-    constexpr bool mobile = false;
+    constexpr bool mobile    = false;
 
 #endif
 
